@@ -49,7 +49,7 @@ h6 {
   min-height: 2.75rem;
   min-width: 8.5rem;
   padding: 0.65rem 1rem;
-  background: var(--hub-dark-cyan, #0BA79A);
+  background: var(--hub-dark-dark-cyan, #1A8C92);
   color: var(--hub-white);
   border: 0;
   border-radius: 0;
