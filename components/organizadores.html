@@ -3,7 +3,6 @@
     :root {
         --bg-light: #f9f9f9;
         --text-dark: #222;
-        --border-color: #e2e8f0;
     }
 
     .jornada-organizadores {
@@ -36,36 +35,33 @@
         font-weight: 700;
         letter-spacing: 2px;
         text-transform: uppercase;
-        margin-bottom: 45px;
+        margin-bottom: 55px;
         color: #333;
     }
 
-    /* --- FILA ÚNICA DE LOGOS ORGANIZADORES (AGRANDADOS) --- */
+    /* --- FILA ÚNICA DE LOGOS INTEGRADOS (SIN CONTENEDOR BLANCO) --- */
     .fila-logos {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 25px;
+        gap: 45px; /* Aumentamos el espacio entre logos ya que no hay recuadros */
         flex-wrap: wrap;
     }
 
-    .logo-card {
-        background: #ffffff;
-        padding: 10px 15px; /* Menos padding interno para darle más lugar a la imagen */
-        border-radius: 0; /* Corrección de 'none' a '0' */
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-        border: 1px solid var(--border-color);
+    .logo-item {
         display: flex;
         align-items: center;
         justify-content: center;
-        min-width: 180px; /* Más ancho mínimo para albergar logos horizontales */
-        height: 120px;   /* Aumentado de 90px a 120px para ganar presencia */
+        width: 160px;  /* Espacio horizontal asignado a cada logo */
+        height: 100px; /* Espacio vertical asignado a cada logo */
     }
 
-    .logo-card img {
+    .logo-item img {
         max-height: 100%;
         max-width: 100%;
         object-fit: contain;
+        /* Podés activar un filtro sutil si querés que los logos con fondo blanco puro 
+           se integren mejor con el gris claro, aunque al ser pngs transparentes o fotos no hace falta */
     }
 
     /* Ajustes para pantallas chicas (Móviles) */
@@ -82,15 +78,14 @@
         }
         .section-title {
             font-size: 1.2rem;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
         .fila-logos {
-            gap: 12px;
+            gap: 25px;
         }
-        .logo-card {
-            height: 85px; /* Proporcionalmente más grande también en móviles */
-            padding: 8px 12px;
-            min-width: 130px;
+        .logo-item {
+            width: 120px;
+            height: 75px; 
         }
     }
 </style>
@@ -115,19 +110,19 @@
     <h2 class="section-title">Organizan la Jornada</h2>
 
     <div class="fila-logos">
-        <div class="logo-card">
+        <div class="logo-item">
             <img src="assets/images/unla logo rrss.jpg" alt="UNLa">
         </div>
-        <div class="logo-card">
+        <div class="logo-item">
             <img src="assets/images/lad sin borde negro.png" alt="LAD">
         </div>
-        <div class="logo-card">
+        <div class="logo-item">
             <img src="assets/images/logo di.jpg" alt="DI UNLa">
         </div>
-        <div class="logo-card">
+        <div class="logo-item">
             <img src="assets/images/logo HyA.jpg" alt="HyA UNLa">
         </div>
-        <div class="logo-card">
+        <div class="logo-item">
             <img src="assets/images/etfdunla_logo.jpg" alt="ETFD UNLa">
         </div>
     </div>
