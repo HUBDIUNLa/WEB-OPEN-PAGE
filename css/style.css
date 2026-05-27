@@ -117,7 +117,7 @@ h6 {
 }
 
 .ecosystem2-section {
-  background: var(--tomato, #FF6542);
+  background: var(--tomato-dark, #FF6542);
   color: var(--hub-black);
 }
 
@@ -129,7 +129,7 @@ h6 {
 
 .ecosystem2-card:hover {
   transform: scale(1.03);
-  background: var(--tomato-dark, #e54906);
+  background: var(--tomato-clear, #e54906);
 }
 
 .ecosystem2-card-link {
@@ -148,7 +148,7 @@ h6 {
 }
 
 .ecosystem2-card-link:hover {
-  background: var(--grape-soda, #88498f);
+  background: var(--tomato-clear, #e54906);
   color: var(--hub-black);
 }
 
