@@ -1,0 +1,135 @@
+
+<style>
+    :root {
+        --bg-light: #f9f9f9;
+        --text-dark: #222;
+        --border-color: #e2e8f0;
+    }
+
+    .jornada-organizadores {
+        padding: 60px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        background-color: var(--bg-light);
+    }
+
+    /* --- GUARDA SUPERIOR DE MINI BLOQUES INTERCALADOS --- */
+    .guarda-bloques {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        flex-wrap: wrap;
+        margin-bottom: 45px;
+    }
+
+    .mini-bloque {
+        height: 35px; /* Tamaño chico y homogéneo */
+        width: auto;
+        object-fit: contain;
+        opacity: 0.8;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 45px;
+        color: #333;
+    }
+
+    /* --- FILA ÚNICA DE LOGOS ORGANIZADORES --- */
+    .fila-logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .logo-card {
+        background: #ffffff;
+        padding: 15px 25px;
+        border-radius: 6px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+        border: 1px solid var(--border-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 140px;
+        height: 90px; /* Altura fija para que toda la fila quede simétrica */
+    }
+
+    .logo-card img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    /* Ajustes para pantallas chicas (Móviles) */
+    @media (max-width: 768px) {
+        .jornada-organizadores {
+            padding: 40px 15px;
+        }
+        .guarda-bloques {
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        .mini-bloque {
+            height: 25px; /* Más chicos en celular */
+        }
+        .section-title {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .fila-logos {
+            gap: 15px;
+        }
+        .logo-card {
+            height: 70px;
+            padding: 10px 15px;
+            min-width: 110px;
+        }
+    }
+</style>
+
+<section class="jornada-organizadores">
+    
+    <div class="guarda-bloques">
+        <img src="assets/images/BLOQUE1.png" alt="Detalle" class="mini-bloque">
+        <img src="assets/images/JDFDPELLETSINFONDO.png" alt="Detalle Pellets" class="mini-bloque">
+        <img src="assets/images/BLOQUE3.png" alt="Detalle" class="mini-bloque">
+        <img src="assets/images/BLOQUE4.png" alt="Detalle" class="mini-bloque">
+        <img src="assets/images/JDFDBLOQUESSINFONDO.png" alt="Detalle Bloques" class="mini-bloque">
+        <img src="assets/images/BLOQUE2.png" alt="Detalle" class="mini-bloque">
+        <img src="assets/images/BLOQUE4.png" alt="Detalle" class="mini-bloque">
+        <img src="assets/images/JDFDBLOQUESSINFONDO.png" alt="Detalle Bloques" class="mini-bloque">
+        <img src="assets/images/BLOQUE1.png" alt="Detalle" class="mini-bloque">
+        <img src="assets/images/JDFDPELLETSINFONDO.png" alt="Detalle Pellets" class="mini-bloque">
+        <img src="assets/images/BLOQUE2.png" alt="Detalle" class="mini-bloque">
+        <img src="assets/images/BLOQUE3.png" alt="Detalle" class="mini-bloque">
+    </div>
+
+    <h2 class="section-title">Organizan la Jornada</h2>
+
+    <div class="fila-logos">
+        <div class="logo-card">
+            <img src="assets/images/unla logo rrss.jpg" alt="UNLa">
+        </div>
+        <div class="logo-card">
+            <img src="assets/images/lad sin borde negro.png" alt="LAD">
+        </div>
+        <div class="logo-card">
+            <img src="assets/images/logo di.jpg" alt="DI UNLa">
+        </div>
+        <div class="logo-card">
+            <img src="assets/images/logo HyA.jpg" alt="HyA UNLa">
+        </div>
+        <div class="logo-card">
+            <img src="assets/images/etfdunla_logo.jpg" alt="ETFD UNLa">
+        </div>
+    </div>
+
+</section>
