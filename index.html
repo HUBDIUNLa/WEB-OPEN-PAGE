@@ -641,5 +641,24 @@ Línea Roca – Estación Lanús.
   <div id="footer"></div>
 
   <script src="js/components.js?v=1"></script>
+
+  <div id="organizadores"></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('componentes/organizadores.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("No se pudo cargar el componente organizadores.html");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('organizadores').innerHTML = data;
+            })
+            .catch(error => console.error('Error:', error));
+    });
+</script>
+
 </body>
 </html>
