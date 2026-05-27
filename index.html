@@ -163,7 +163,7 @@
   </div>
 </section>
 
-<section id="ubicacion" class="py-20 bg-[#1A8C92] text-white w-screen">
+<section id="ubicacion" class="py-20 bg-[#1A8C92] text-white w-full overflow-hidden">
   <div class="container mx-auto px-6">
 
     <div class="text-center mb-12">
@@ -220,27 +220,69 @@
               Se recomienda llegar con anticipación.
             </li>
 
-          </ul>
-        </div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
 
-      </div>
+  <!-- Información -->
+  <div class="space-y-8 h-full">
 
-      <!-- Mapa -->
-      <div class="overflow-hidden border border-cyan-800">
+    <div class="bg-cyan-900 p-8 border border-cyan-800">
+      <h3 class="text-2xl font-semibold mb-4">
+        Dirección
+      </h3>
 
-        <iframe
-          src="https://www.google.com/maps?q=Av.%20Hip%C3%B3lito%20Yrigoyen%205682%20Lan%C3%BAs&output=embed"
-          width="100%"
-          height="500"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-
-      </div>
-
+      <p class="text-gray-300 leading-relaxed">
+        Polo Tecnológico UNLa <br>
+        Av. Hipólito Yrigoyen 5682 <br>
+        Remedios de Escalada, Lanús <br>
+        Provincia de Buenos Aires
+      </p>
     </div>
+
+    <div class="bg-cyan-900 p-8 border border-cyan-800">
+      <h3 class="text-2xl font-semibold mb-4">
+        Cómo Llegar
+      </h3>
+
+      <ul class="space-y-4 text-gray-300">
+
+        <li>
+          <strong>En tren:</strong>
+          Línea Roca – Estación Remedios de Escalada.
+          Desde allí se puede acceder caminando o mediante líneas de colectivo cercanas.
+        </li>
+
+        <li>
+          <strong>En colectivo:</strong>
+          Varias líneas circulan por Av. Hipólito Yrigoyen y alrededores del predio universitario.
+        </li>
+
+        <li>
+          <strong>En automóvil:</strong>
+          El acceso principal se encuentra sobre Av. Hipólito Yrigoyen.
+          Se recomienda llegar con anticipación.
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Mapa -->
+  <div class="border border-cyan-800 h-full min-h-[700px]">
+
+    <iframe
+      src="https://www.google.com/maps?q=Av.%20Hip%C3%B3lito%20Yrigoyen%205682%20Lan%C3%BAs&output=embed"
+      class="w-full h-full"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+  </div>
+
+</div>
+
   </div>
 </section>
 
