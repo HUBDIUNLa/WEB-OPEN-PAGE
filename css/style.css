@@ -239,7 +239,7 @@ h6 {
 }
 
 .legal-divider {
-  border-top: 4px solid var(--hub-dark-gray);
+  border-top: 4px solid var(--tomato, #FF6542);
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
