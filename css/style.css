@@ -127,7 +127,7 @@ h6 {
 }
 
 .site-link:hover {
-  color: var(--hub-lad-cyan);
+  color: var(--hub-dark-dark-cyan);
 }
 
 .site-footer {
@@ -145,7 +145,7 @@ h6 {
 }
 
 .site-link:hover {
-  color: var(--hub-lad-cyan);
+  color: var(--hub-dark-dark-cyan);
 }
 
 @keyframes fadeIn {
