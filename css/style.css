@@ -1351,3 +1351,79 @@ h6 {
     }
 }
 
+/* --- ESTILO WEB NORMAL (Oculto en pantalla) --- */
+.portada-impacto-print {
+    display: none;
+}
+
+/* --- ESTILO DE IMPRESIÓN PORTADA DE IMPACTO (Adentro de @media print) --- */
+@media print {
+    .portada-impacto-print {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important; /* Centrado vertical absoluto */
+        align-items: center !important;     /* Centrado horizontal absoluto */
+        
+        width: 210mm !important;
+        height: 297mm !important;
+        height: 100vh !important;
+        
+        background-color: #0D5C61 !important; /* Fondo color pleno institucional */
+        padding: 20mm !important;
+        box-sizing: border-box !important;
+        
+        /* Salto obligado inmediatamente después de esta primera carátula */
+        page-break-after: always !important;
+        break-after: page !important;
+        
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .impacto-contenido {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    /* Contenedor gráfico para los logos e imágenes del centro */
+    .impacto-grafico-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 35px !important; /* Separación estética entre logo e imagen */
+        margin-bottom: 50px !important;
+        width: 100% !important;
+    }
+
+    /* El logo tipográfico adjunto escalado de forma imponente */
+    .impacto-logo-blanco {
+        max-width: 240px !important;
+        height: auto !important;
+        filter: brightness(0) invert(1) !important; /* Fuerza a que si el logo tiene rasgos negros pase a blanco puro */
+    }
+
+    /* La imagen del bloque láser */
+    .impacto-imagen-central {
+        max-width: 160px !important;
+        height: auto !important;
+        object-fit: contain !important;
+        /* Si la imagen posee fondo negro, esto la fusiona de forma invisible sobre el fondo pleno */
+        mix-blend-mode: screen !important; 
+    }
+
+    /* Texto exacto solicitado en blanco puro */
+    .impacto-titulo {
+        font-size: 34px !important;
+        font-weight: 800 !important;
+        color: #ffffff !important; /* Texto en blanco */
+        text-transform: uppercase !important;
+        letter-spacing: 1.5px !important;
+        line-height: 1.2 !important;
+        max-width: 85% !important;
+        margin: 0 auto !important;
+    }
+}
