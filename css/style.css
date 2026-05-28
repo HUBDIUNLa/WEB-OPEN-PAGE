@@ -1110,79 +1110,82 @@ h6 {
 
 /* --- ESTILO WEB NORMAL --- */
 .caratula-print {
-    display: none; /* Oculto completamente en la pantalla web */
+    display: none;
 }
 
-/* --- ESTILO DE IMPRESIÓN (Sumalo adentro de tu @media print de style.css) --- */
+/* --- ESTILO DE IMPRESIÓN MODIFICADO (Adentro de @media print) --- */
 @media print {
     .caratula-print {
-        display: block !important; /* Se vuelve visible en el PDF */
+        display: block !important;
         width: 100% !important;
-        margin-bottom: 35px !important; /* Espacio para que no se pegue al título de las condiciones */
+        background-color: #1A8C92 !important; /* Fondo Teal como la sección Ubicación */
+        padding: 40px 30px !important;       /* Espaciado interno generoso para la media carátula */
+        margin-bottom: 40px !important;
+        box-sizing: border-box !important;
+        /* Forzar renderizado de color de fondo en el motor del navegador */
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 
     .caratula-flex {
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
-        padding-bottom: 15px !important;
     }
 
-    /* Tamaño controlado para el logo de la carátula */
-    .caratula-logo {
+    /* Columna de logos (Izquierda) */
+    .caratula-logos-col {
         width: 25% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important; /* Separación vertical entre el logo de jornadas y el del LAD */
+        align-items: flex-start !important;
     }
     
-    .caratula-logo img {
-        max-width: 90px !important;
+    .caratula-logos-col img {
         height: auto !important;
         object-fit: contain !important;
     }
 
-    /* Bloque de texto derecho */
+    .logo-jornada {
+        max-width: 95px !important;
+    }
+
+    .logo-lad-sub {
+        max-width: 55px !important; /* Un poco más compacto para equilibrar visualmente */
+    }
+
+    /* Columna de información (Derecha - Todo alineado de este lado) */
     .caratula-info {
         width: 70% !important;
-        text-align: right !important;
+        text-align: right !important; /* Forzado absoluto a la derecha */
     }
 
     .caratula-info h4 {
-        font-size: 16px !important;
+        font-size: 20px !important; /* Un poco más grande para destacar el título principal */
         font-weight: 700 !important;
         text-transform: uppercase !important;
         letter-spacing: 1px !important;
-        margin: 0 0 4px 0 !important;
-        color: #000000 !important;
+        margin: 0 0 8px 0 !important;
+        color: #ffffff !important; /* Letras blancas */
     }
 
     .caratula-sub {
-        font-size: 13px !important;
-        color: #444444 !important;
-        margin: 0 0 8px 0 !important;
+        font-size: 14px !important;
+        color: rgba(255, 255, 255, 0.9) !important; /* Blanco sutil */
+        margin: 0 0 15px 0 !important;
     }
 
     .caratula-meta-line {
-        font-size: 11px !important;
-        color: #666666 !important;
+        font-size: 12px !important;
+        color: rgba(255, 255, 255, 0.8) !important;
         text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
     }
 
     .caratula-separador {
         margin: 0 8px !important;
-        color: #cccccc !important;
-    }
-
-    /* Línea gris fina horizontal que delimita la carátula */
-    .caratula-linea-cierre {
-        border-bottom: 1px solid #cccccc !important;
-        width: 100% !important;
-        margin-top: 5px !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
-    
-    /* Pequeño ajuste complementario: bajamos el logo de pellets individual si molestaba con este encabezado */
-    .logo-tarjeta-esquina {
-        top: 95px !important; /* Lo desplazamos un poco hacia abajo para que convivan en armonía */
+        color: rgba(255, 255, 255, 0.4) !important;
     }
 }
 
