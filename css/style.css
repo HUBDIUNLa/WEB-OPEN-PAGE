@@ -1515,3 +1515,78 @@ h6 {
         filter: none !important; /* Eliminado por completo el borde tenue; fusión nativa con el fondo */
     }
 }
+
+/* --- PANTALLA DE INTRODUCCIÓN CON VIDEO --- */
+#video-intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    z-index: 99999; /* Por encima de cualquier navbar o portada */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    overflow: hidden;
+}
+
+.video-intro-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#intro-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Se estira estilo fondo de pantalla sin deformarse */
+}
+
+.video-overlay-filtro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Oscurece un toque el video para levantar el botón */
+    z-index: 2;
+}
+
+.btn-ingresar-jornada {
+    position: relative;
+    z-index: 3;
+    background-color: #0D5C61; /* Tu verde institucional */
+    color: #ffffff;
+    font-family: 'Karla', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 16px 35px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.btn-ingresar-jornada:hover {
+    background-color: #1A8C92; /* Variante teal clara al pasar el mouse */
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(26, 140, 146, 0.4);
+}
+
+/* Si la intro está activa pero mandan a imprimir, la anulamos para que no rompa el PDF */
+@media print {
+    #video-intro-overlay {
+        display: none !important;
+    }
+}

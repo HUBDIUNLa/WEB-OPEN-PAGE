@@ -34,6 +34,26 @@
 </head>
 
 <body>
+  <!-- PANTALLA DE INTRO CON VIDEO (Oculta automáticamente al imprimir) -->
+<div id="video-intro-overlay" class="no-print">
+  <div class="video-intro-container">
+    <!-- El video en loop, mudo por defecto para que el navegador permita el autoplay -->
+    <video autoplay muted loop playsinline id="intro-video">
+      <source src="assets/images/mp_.mp4" type="video/mp4">
+      Tu navegador no soporta la reproducción de video.
+    </video>
+    
+    <!-- Capa oscura intermedia para que el botón tenga excelente contraste -->
+    <div class="video-overlay-filtro"></div>
+    
+    <!-- Botón de entrada -->
+    <button onclick="ingresarAWeb()" class="btn-ingresar-jornada">
+      <span>Ingresar a la Circular</span>
+      <i class="fa-solid fa-arrow-right ml-2"></i>
+    </button>
+  </div>
+</div>
+
   <div id="navbar"></div>
 
   <main id="JDFD" class="page-main">
@@ -697,5 +717,20 @@ Línea Roca – Estación Lanús.
     });
 </script>
 
+<script>
+    function ingresarAWeb() {
+      const introScreen = document.getElementById('video-intro-overlay');
+      if (introScreen) {
+        // Genera el efecto de desvanecimiento suave
+        introScreen.style.opacity = '0';
+        introScreen.style.transform = 'top';
+        
+        // Al terminar la transición de CSS (800ms), removemos el nodo para liberar memoria
+        setTimeout(() => {
+          introScreen.style.display = 'none';
+        }, 800);
+      }
+    }
+  </script>
 </body>
 </html>
