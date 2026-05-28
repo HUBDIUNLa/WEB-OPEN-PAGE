@@ -1113,13 +1113,18 @@ h6 {
     display: none;
 }
 
-/* --- ESTILO DE IMPRESIÓN ACTUALIZADO CON LOGOS MÁS GRANDES (Adentro de @media print) --- */
+/* --- ESTILO WEB NORMAL --- */
+.caratula-print {
+    display: none;
+}
+
+/* --- ESTILO DE IMPRESIÓN CORREGIDO (Adentro de @media print) --- */
 @media print {
     .caratula-print {
         display: block !important;
         width: 100% !important;
-        background-color: #1A8C92 !important; /* Fondo Teal */
-        padding: 40px 30px !important;       /* Espaciado interno */
+        background-color: #0D5C61 !important; /* Tono más oscuro y verdoso para contraste del logo */
+        padding: 40px 30px !important;       
         margin-bottom: 40px !important;
         box-sizing: border-box !important;
         -webkit-print-color-adjust: exact !important;
@@ -1132,12 +1137,12 @@ h6 {
         justify-content: space-between !important;
     }
 
-    /* NUEVO: Columna de logos un poco más ancha para darles lugar */
+    /* Columna Izquierda de Logos */
     .caratula-logos-col {
-        width: 30% !important; 
+        width: 35% !important; /* Más espacio para albergar el logo de la jornada extendido */
         display: flex !important;
         flex-direction: column !important;
-        gap: 18px !important; /* Más espacio entre los dos logos */
+        gap: 12px !important; 
         align-items: flex-start !important;
     }
     
@@ -1146,18 +1151,18 @@ h6 {
         object-fit: contain !important;
     }
 
-    /* NUEVO: Tamaños máximos agrandados */
+    /* Ajuste de escalas: Jornada más grande, LAD más chico */
     .logo-jornada {
-        max-width: 110px !important; /* Subió de 95px a 110px */
+        max-width: 140px !important; /* Agrandado sustancialmente */
     }
 
     .logo-lad-sub {
-        max-width: 70px !important;  /* Subió de 55px a 70px */
+        max-width: 50px !important;  /* Reducido para que quede como firma secundaria */
     }
 
-    /* Columna de información (Derecha) */
+    /* Columna de información (Derecha - Alineación limpia) */
     .caratula-info {
-        width: 65% !important; /* Ajustado proporcionalmente al cambio de la izquierda */
+        width: 60% !important;
         text-align: right !important;
     }
 
@@ -1166,19 +1171,13 @@ h6 {
         font-weight: 700 !important;
         text-transform: uppercase !important;
         letter-spacing: 1px !important;
-        margin: 0 0 8px 0 !important;
+        margin: 0 0 12px 0 !important;
         color: #ffffff !important;
-    }
-
-    .caratula-sub {
-        font-size: 14px !important;
-        color: rgba(255, 255, 255, 0.9) !important;
-        margin: 0 0 15px 0 !important;
     }
 
     .caratula-meta-line {
         font-size: 12px !important;
-        color: rgba(255, 255, 255, 0.8) !important;
+        color: rgba(255, 255, 255, 0.85) !important;
         text-transform: uppercase !important;
         letter-spacing: 0.5px !important;
     }
@@ -1188,4 +1187,3 @@ h6 {
         color: rgba(255, 255, 255, 0.4) !important;
     }
 }
-
