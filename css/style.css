@@ -1193,19 +1193,20 @@ h6 {
     display: none;
 }
 
-/* --- ESTILO DE IMPRESIÓN INTEGRADO (Adentro de @media print) --- */
+/* --- ESTILO DE IMPRESIÓN INTEGRADO CON 5 LOGOS (Adentro de @media print) --- */
 @media print {
     .portada-a4-print {
         display: flex !important;
         flex-direction: column !important;
         justify-content: space-between !important;
+        position: relative !important; 
         
         width: 210mm !important;
         height: 297mm !important;
         height: 100vh !important;
         
-        background-color: #f7f5f2 !important; /* Fondo arena/grisáceo suave y sofisticado */
-        padding: 30mm 25mm 25mm 25mm !important;
+        background-color: #f7f5f2 !important; /* Fondo arena/grisáceo suave */
+        padding: 30mm 20mm 25mm 20mm !important; /* Ajustamos levemente márgenes laterales */
         box-sizing: border-box !important;
         
         page-break-after: always !important;
@@ -1215,38 +1216,38 @@ h6 {
         print-color-adjust: exact !important;
     }
 
-    /* --- GUARDA DE BLOQUES Y LOGOS EN UNA SOLA FILA --- */
+    /* --- GUARDA DE BLOQUES Y LOGOS REDISTRIBUIDA --- */
     .portada-guarda-bloques {
         display: flex !important;
-        justify-content: center !important;
+        justify-content: space-between !important; /* Distribuye uniformemente a lo ancho */
         align-items: center !important;
-        gap: 15px !important; /* Espaciado constante estilo grilla modular */
+        gap: 10px !important; /* Espacio compacto para que entren las 11 piezas */
         width: 100% !important;
     }
 
-    /* Forzamos a que los bloques y los contenedores institucionales midan lo mismo de alto */
+    /* Reducción controlada a 35px para albergar la fila extendida */
     .bloque-cabecera {
-        height: 45px !important;
+        height: 35px !important;
         width: auto !important;
         object-fit: contain !important;
-        opacity: 0.9 !important; /* Presencia de color bien nítida */
+        opacity: 0.9 !important;
     }
 
     .contenedor-logo-institucional {
-        height: 45px !important;
+        height: 35px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
     }
 
-    /* Control riguroso del tamaño de los logos secundarios */
+    /* Todos los logos escalan e igualan su altura perfectamente */
     .logo-inst-cabecera {
-        height: 100% !important; /* Se adaptan estrictamente a los 45px de los bloques */
+        height: 100% !important;
         width: auto !important;
         object-fit: contain !important;
     }
 
-    /* --- BLOQUE CENTRAL COMPLETAMENTE CENTRADO --- */
+    /* --- BLOQUE CENTRAL --- */
     .portada-centro {
         text-align: center !important;
         width: 100% !important;
@@ -1254,7 +1255,7 @@ h6 {
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
-        margin-top: -15mm !important;
+        margin-top: -10mm !important;
     }
 
     .contenedor-logo-principal {
@@ -1264,7 +1265,6 @@ h6 {
         justify-content: center !important;
     }
 
-    /* El logo de la jornada toma el control absoluto del protagonismo visual */
     .logo-jornada-principal {
         max-width: 210px !important; 
         height: auto !important;
@@ -1274,14 +1274,14 @@ h6 {
         font-size: 15px !important;
         text-transform: uppercase !important;
         letter-spacing: 2px !important;
-        color: #353839 !important; /* Onyx */
+        color: #353839 !important;
         margin: 0 auto 12px auto !important;
     }
 
     .portada-linea-decorativa {
         width: 60px !important;
         height: 2px !important;
-        background-color: #353839 !important; /* Onyx */
+        background-color: #353839 !important;
         margin: 0 auto 25px auto !important;
     }
 
@@ -1289,7 +1289,7 @@ h6 {
         font-size: 30px !important;
         font-weight: 800 !important;
         line-height: 1.2 !important;
-        color: #353839 !important; /* Onyx */
+        color: #353839 !important;
         text-transform: uppercase !important;
         margin: 0 auto 12px auto !important;
         letter-spacing: 0.5px !important;
