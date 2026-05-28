@@ -1427,3 +1427,79 @@ h6 {
         margin: 0 auto !important;
     }
 }
+
+/* --- ESTILO WEB NORMAL (Oculto en pantalla) --- */
+.portada-lad-espejo-print {
+    display: none;
+}
+
+/* --- ESTILO DE IMPRESIÓN PORTADA LAD (Adentro de @media print) --- */
+@media print {
+    .portada-lad-espejo-print {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        
+        width: 210mm !important;
+        height: 297mm !important;
+        height: 100vh !important;
+        
+        background-color: #000000 !important; /* Fondo negro pleno */
+        padding: 30mm 20mm !important;
+        box-sizing: border-box !important;
+        
+        /* Salto de página obligado para que sea una hoja independiente */
+        page-break-after: always !important;
+        break-after: page !important;
+        
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .lad-espejo-contenedor {
+        display: grid !important;
+        grid-template-columns: 1fr 1.2fr 1fr !important; /* El centro un poco más ancho para el logo */
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        gap: 20px !important;
+    }
+
+    /* Columnas Laterales de Bloques */
+    .columna-bloques {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        gap: 40px !important; /* Espaciado vertical entre los bloques */
+    }
+
+    .bloque-morfologico {
+        width: 100% !important;
+        max-width: 130px !important; /* Tamaño controlado de los bloques */
+        height: auto !important;
+        object-fit: contain !important;
+        margin: 0 auto !important;
+    }
+
+    /* EFECTO ESPEJO CLAVE: Rota horizontalmente todos los elementos de la columna derecha */
+    .columna-bloques.col-derecha .bloque-morfologico {
+        transform: scaleX(-1) !important;
+    }
+
+    /* Columna Central */
+    .columna-centro-logo {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+    }
+
+    .logo-lad-central {
+        width: 100% !important;
+        max-width: 180px !important; /* Protagonismo en el centro */
+        height: auto !important;
+        object-fit: contain !important;
+        /* Mantiene buena visualización si tuviese rasgos oscuros contra el fondo negro */
+        filter: drop-shadow(0px 0px 8px rgba(255,255,255,0.1)) !important;
+    }
+}
