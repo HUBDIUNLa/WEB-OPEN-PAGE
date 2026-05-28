@@ -1188,28 +1188,27 @@ h6 {
     }
 }
 
-/* --- ESTILO WEB NORMAL (Oculto en pantalla) --- */
+/* --- ESTILO WEB NORMAL --- */
 .portada-a4-print {
     display: none;
 }
 
-/* --- ESTILO DE IMPRESIÓN COMPLETO (Adentro de @media print) --- */
+/* --- ESTILO DE IMPRESIÓN CORREGIDO (Adentro de @media print) --- */
 @media print {
     .portada-a4-print {
         display: flex !important;
         flex-direction: column !important;
         justify-content: space-between !important;
+        position: relative !important; /* Base para ubicar los bloques decorativos */
         
-        /* Forzar dimensiones exactas de hoja A4 estándar */
         width: 210mm !important;
         height: 297mm !important;
         height: 100vh !important;
         
-        background-color: #0D5C61 !important; /* Verde oscuro institucional */
-        padding: 40mm 25mm 30mm 25mm !important; /* Márgenes de imprenta generosos */
+        background-color: #f4f6f6 !important; /* Fondo claro institucional para resaltar logos */
+        padding: 35mm 25mm 25mm 25mm !important;
         box-sizing: border-box !important;
         
-        /* Salto de página obligado inmediatamente después de la carátula */
         page-break-after: always !important;
         break-after: page !important;
         
@@ -1217,122 +1216,141 @@ h6 {
         print-color-adjust: exact !important;
     }
 
-    /* --- Encabezado --- */
+    /* --- Mini Bloques de Detalle en las Esquinas --- */
+    .decoracion-bloque {
+        position: absolute !important;
+        height: 45px !important;
+        width: auto !important;
+        opacity: 0.15 !important; /* Sutiles marcas de agua para que no compitan con el texto */
+    }
+    .b-top-izq { top: 15mm; left: 15mm; }
+    .b-top-der { top: 15mm; right: 15mm; }
+    .b-bottom-izq { bottom: 15mm; left: 15mm; }
+    .b-bottom-der { bottom: 15mm; right: 15mm; }
+
+    /* --- Encabezado de Logos --- */
     .portada-header {
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
         width: 100% !important;
+        z-index: 10;
+    }
+
+    .header-logos-izq {
+        display: flex !important;
+        align-items: center !important;
+        gap: 20px !important;
     }
 
     .portada-logo-jornada {
-        max-width: 150px !important;
+        max-width: 160px !important; /* Cobró mayor protagonismo */
+        height: auto !important;
+    }
+
+    .portada-logo-lad {
+        max-width: 55px !important; /* Integrado al encabezado */
         height: auto !important;
     }
 
     .portada-logo-unla {
-        max-width: 90px !important;
+        max-width: 70px !important; /* Reducido para equilibrar las proporciones */
         height: auto !important;
     }
 
-    /* --- Bloque Central --- */
+    /* --- Bloque Central Estricto Onyx y Centrado --- */
     .portada-centro {
-        text-align: center !important;
-        margin-top: -20mm !important; /* Centrado óptico ajustado */
+        text-align: center !important; /* Asegura el centrado de todos sus hijos */
+        width: 100% !important;
+        margin-top: -10mm !important;
     }
 
     .portada-institucion {
         font-size: 16px !important;
         text-transform: uppercase !important;
         letter-spacing: 2px !important;
-        color: rgba(255, 255, 255, 0.8) !important;
-        margin: 0 0 15px 0 !important;
+        color: #353839 !important; /* Onyx */
+        margin: 0 auto 12px auto !important;
+        text-align: center !important;
     }
 
     .portada-linea-decorativa {
-        width: 60px !important;
-        height: 3px !important;
-        background-color: #ffffff !important;
+        width: 80px !important;
+        height: 2px !important;
+        background-color: #353839 !important; /* Onyx */
         margin: 0 auto 25px auto !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
     }
 
     .portada-centro h1 {
-        font-size: 34px !important;
+        font-size: 32px !important;
         font-weight: 800 !important;
         line-height: 1.2 !important;
-        color: #ffffff !important;
+        color: #353839 !important; /* Onyx */
         text-transform: uppercase !important;
-        margin: 0 0 15px 0 !important;
+        margin: 0 auto 15px auto !important;
         letter-spacing: 0.5px !important;
+        text-align: center !important;
     }
 
     .portada-centro h2 {
-        font-size: 20px !important;
-        font-weight: 400 !important;
-        color: rgba(255, 255, 255, 0.9) !important;
-        margin: 0 0 35px 0 !important;
+        font-size: 19px !important;
+        font-weight: 500 !important;
+        color: #4a4e50 !important;
+        margin: 0 auto 30px auto !important;
+        text-align: center !important;
     }
 
     .portada-version {
         font-size: 13px !important;
         font-family: 'Roboto Mono', monospace !important;
-        color: rgba(255, 255, 255, 0.6) !important;
+        color: #555859 !important;
         text-transform: uppercase !important;
         letter-spacing: 1px !important;
+        text-align: center !important;
+        margin: 0 auto !important;
     }
 
     /* --- Bloque Inferior --- */
     .portada-footer {
         width: 100% !important;
+        z-index: 10;
     }
 
-    /* Fila de Tags con las modalidades */
     .portada-modalidades {
         display: flex !important;
         justify-content: center !important;
         gap: 12px !important;
-        flex-wrap: wrap !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
-        padding-bottom: 25px !important;
-        margin-bottom: 25px !important;
+        border-bottom: 1px solid rgba(53, 56, 57, 0.2) !important;
+        padding-bottom: 20px !important;
+        margin-bottom: 20px !important;
     }
 
     .tag-modalidad {
         font-size: 11px !important;
         text-transform: uppercase !important;
         letter-spacing: 1px !important;
-        background-color: rgba(255, 255, 255, 0.1) !important;
-        color: #ffffff !important;
-        padding: 6px 14px !important;
-        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        background-color: rgba(13, 92, 97, 0.08) !important; /* Toque sutil verdoso */
+        color: #353839 !important;
+        padding: 5px 12px !important;
+        border: 1px solid rgba(53, 56, 57, 0.15) !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
     }
 
-    /* Grilla técnica de metadatos */
     .portada-meta-grid {
         display: flex !important;
         justify-content: space-between !important;
         width: 100% !important;
     }
 
-    .meta-item-izq, .meta-item-der {
-        width: 48% !important;
-    }
-
-    .meta-item-izq {
-        text-align: left !important;
-    }
-
-    .meta-item-der {
-        text-align: right !important;
-    }
+    .meta-item-izq { text-align: left !important; width: 48% !important; }
+    .meta-item-der { text-align: right !important; width: 48% !important; }
 
     .portada-meta-grid p {
-        font-size: 12px !important;
-        color: rgba(255, 255, 255, 0.85) !important;
+        font-size: 11px !important;
+        color: #353839 !important;
         margin: 0 0 4px 0 !important;
         line-height: 1.4 !important;
     }
