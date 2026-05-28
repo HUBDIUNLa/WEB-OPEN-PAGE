@@ -272,6 +272,8 @@ h6 {
   background: var(--mauve-shadow, #564154);
   color: var(--hub-white);
   padding: 3rem;
+  position: relative;
+    overflow: hidden;
 }
 
 .legal-divider {
@@ -782,6 +784,8 @@ h6 {
   background: var(--hub-dark-gray, #564154);
   color: var(--hub-white);
   padding: 3rem;
+  position: relative;
+    overflow: hidden;
 }
 
 .legal2-divider {
@@ -836,6 +840,8 @@ h6 {
   background: var(--hub-dark-gray, #564154);
   color: var(--hub-white);
   padding: 3rem;
+  position: relative;
+    overflow: hidden;
 }
 
 .legal3-divider {
@@ -889,6 +895,8 @@ h6 {
   background: var(--hub-dark-gray, #564154);
   color: var(--hub-white);
   padding: 3rem;
+  position: relative;
+    overflow: hidden;
 }
 
 .legal0-divider {
@@ -931,4 +939,26 @@ h6 {
 
 .legal0-link:hover {
   color: var(--hub-dark-teal, #0E7469);
+}
+
+/* Estilo para el logo de pellets flotante arriba a la derecha */
+.logo-tarjeta-esquina {
+    position: absolute;
+    top: 25px;       /* Distancia desde el borde superior de la tarjeta */
+    right: 30px;     /* Distancia desde el borde derecho de la tarjeta */
+    width: 50px;     /* Tamaño controlado para que sea un detalle elegante */
+    height: auto;
+    object-fit: contain;
+    opacity: 0.85;    /* Sutil transparencia para integrarlo al diseño */
+    pointer-events: none; /* Evita que interfiera si alguien quiere seleccionar texto abajo */
+}
+
+/* En celulares reducimos el tamaño o lo acomodamos para que no tape contenido */
+@media (max-width: 768px) {
+    .logo-tarjeta-esquina {
+        top: 15px;
+        right: 15px;
+        width: 35px;
+        opacity: 0.5;
+    }
 }
