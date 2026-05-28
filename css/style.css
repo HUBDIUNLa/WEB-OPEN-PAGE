@@ -1101,6 +1101,89 @@ h6 {
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
+
+    /* NUEVO: Forzar márgenes limpios en la hoja física o PDF */
+    @page {
+        margin: 1cm; /* Regula el espacio del borde de la hoja al texto */
+    }
+}
+
+/* --- ESTILO WEB NORMAL --- */
+.caratula-print {
+    display: none; /* Oculto completamente en la pantalla web */
+}
+
+/* --- ESTILO DE IMPRESIÓN (Sumalo adentro de tu @media print de style.css) --- */
+@media print {
+    .caratula-print {
+        display: block !important; /* Se vuelve visible en el PDF */
+        width: 100% !important;
+        margin-bottom: 35px !important; /* Espacio para que no se pegue al título de las condiciones */
+    }
+
+    .caratula-flex {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding-bottom: 15px !important;
+    }
+
+    /* Tamaño controlado para el logo de la carátula */
+    .caratula-logo {
+        width: 25% !important;
+    }
+    
+    .caratula-logo img {
+        max-width: 90px !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+
+    /* Bloque de texto derecho */
+    .caratula-info {
+        width: 70% !important;
+        text-align: right !important;
+    }
+
+    .caratula-info h4 {
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        margin: 0 0 4px 0 !important;
+        color: #000000 !important;
+    }
+
+    .caratula-sub {
+        font-size: 13px !important;
+        color: #444444 !important;
+        margin: 0 0 8px 0 !important;
+    }
+
+    .caratula-meta-line {
+        font-size: 11px !important;
+        color: #666666 !important;
+        text-transform: uppercase !important;
+    }
+
+    .caratula-separador {
+        margin: 0 8px !important;
+        color: #cccccc !important;
+    }
+
+    /* Línea gris fina horizontal que delimita la carátula */
+    .caratula-linea-cierre {
+        border-bottom: 1px solid #cccccc !important;
+        width: 100% !important;
+        margin-top: 5px !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    /* Pequeño ajuste complementario: bajamos el logo de pellets individual si molestaba con este encabezado */
+    .logo-tarjeta-esquina {
+        top: 95px !important; /* Lo desplazamos un poco hacia abajo para que convivan en armonía */
+    }
 }
 
 
