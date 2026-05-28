@@ -839,7 +839,7 @@ h6 {
 }
 
 .legal3-divider {
-  border-top: 4px solid var(--tomato-clear, #00a896);
+  border-top: 4px solid var(--tomato-clear, #e54906);
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -877,5 +877,5 @@ h6 {
 }
 
 .legal3-link:hover {
-  color: var(--tomato-clear, #00a896);
+  color: var(--tomato-clear, #e54906);
 }
