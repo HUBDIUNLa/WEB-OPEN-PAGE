@@ -771,3 +771,57 @@ h6 {
     grid-template-columns: 1fr;
   }
 }
+
+.legal2-section {
+  padding: 4rem 0;
+}
+
+.legal2-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--hub-dark-gray, #564154);
+  color: var(--hub-white);
+  padding: 3rem;
+}
+
+.legal2-divider {
+  border-top: 4px solid var(--hub-cyan-bright, #00a896);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.legal2-date {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.legal2-title h3{
+  color: var(--hub-white);
+  margin-bottom: 2rem;
+}
+
+.legal2-content {
+  max-width: 850px;
+  line-height: 1.7;
+}
+
+.legal2-content p + p {
+  margin-top: 1rem;
+}
+
+.legal2-content h6 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--hub-white);
+  font-size: 0.875rem;
+}
+
+.legal2-link {
+  color: var(--hub-white);
+  text-decoration: underline;
+}
+
+.legal2-link:hover {
+  color: var(--hub-cyan-bright, #00a896);
+}
