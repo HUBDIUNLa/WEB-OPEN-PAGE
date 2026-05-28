@@ -1113,16 +1113,15 @@ h6 {
     display: none;
 }
 
-/* --- ESTILO DE IMPRESIÓN MODIFICADO (Adentro de @media print) --- */
+/* --- ESTILO DE IMPRESIÓN ACTUALIZADO CON LOGOS MÁS GRANDES (Adentro de @media print) --- */
 @media print {
     .caratula-print {
         display: block !important;
         width: 100% !important;
-        background-color: #1A8C92 !important; /* Fondo Teal como la sección Ubicación */
-        padding: 40px 30px !important;       /* Espaciado interno generoso para la media carátula */
+        background-color: #1A8C92 !important; /* Fondo Teal */
+        padding: 40px 30px !important;       /* Espaciado interno */
         margin-bottom: 40px !important;
         box-sizing: border-box !important;
-        /* Forzar renderizado de color de fondo en el motor del navegador */
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
     }
@@ -1133,12 +1132,12 @@ h6 {
         justify-content: space-between !important;
     }
 
-    /* Columna de logos (Izquierda) */
+    /* NUEVO: Columna de logos un poco más ancha para darles lugar */
     .caratula-logos-col {
-        width: 25% !important;
+        width: 30% !important; 
         display: flex !important;
         flex-direction: column !important;
-        gap: 15px !important; /* Separación vertical entre el logo de jornadas y el del LAD */
+        gap: 18px !important; /* Más espacio entre los dos logos */
         align-items: flex-start !important;
     }
     
@@ -1147,32 +1146,33 @@ h6 {
         object-fit: contain !important;
     }
 
+    /* NUEVO: Tamaños máximos agrandados */
     .logo-jornada {
-        max-width: 95px !important;
+        max-width: 110px !important; /* Subió de 95px a 110px */
     }
 
     .logo-lad-sub {
-        max-width: 55px !important; /* Un poco más compacto para equilibrar visualmente */
+        max-width: 70px !important;  /* Subió de 55px a 70px */
     }
 
-    /* Columna de información (Derecha - Todo alineado de este lado) */
+    /* Columna de información (Derecha) */
     .caratula-info {
-        width: 70% !important;
-        text-align: right !important; /* Forzado absoluto a la derecha */
+        width: 65% !important; /* Ajustado proporcionalmente al cambio de la izquierda */
+        text-align: right !important;
     }
 
     .caratula-info h4 {
-        font-size: 20px !important; /* Un poco más grande para destacar el título principal */
+        font-size: 20px !important;
         font-weight: 700 !important;
         text-transform: uppercase !important;
         letter-spacing: 1px !important;
         margin: 0 0 8px 0 !important;
-        color: #ffffff !important; /* Letras blancas */
+        color: #ffffff !important;
     }
 
     .caratula-sub {
         font-size: 14px !important;
-        color: rgba(255, 255, 255, 0.9) !important; /* Blanco sutil */
+        color: rgba(255, 255, 255, 0.9) !important;
         margin: 0 0 15px 0 !important;
     }
 
@@ -1188,5 +1188,4 @@ h6 {
         color: rgba(255, 255, 255, 0.4) !important;
     }
 }
-
 
