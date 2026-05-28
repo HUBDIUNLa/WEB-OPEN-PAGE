@@ -1193,20 +1193,20 @@ h6 {
     display: none;
 }
 
-/* --- ESTILO DE IMPRESIÓN CORREGIDO (Adentro de @media print) --- */
+/* --- ESTILO DE IMPRESIÓN RECALIBRADO (Adentro de @media print) --- */
 @media print {
     .portada-a4-print {
         display: flex !important;
         flex-direction: column !important;
         justify-content: space-between !important;
-        position: relative !important; /* Base para ubicar los bloques decorativos */
+        position: relative !important; 
         
         width: 210mm !important;
         height: 297mm !important;
         height: 100vh !important;
         
-        background-color: #f4f6f6 !important; /* Fondo claro institucional para resaltar logos */
-        padding: 35mm 25mm 25mm 25mm !important;
+        background-color: #f8f9fa !important; /* Fondo neutro limpio, nada de celeste lavado general */
+        padding: 40mm 25mm 25mm 25mm !important;
         box-sizing: border-box !important;
         
         page-break-after: always !important;
@@ -1216,25 +1216,32 @@ h6 {
         print-color-adjust: exact !important;
     }
 
-    /* --- Mini Bloques de Detalle en las Esquinas --- */
+    /* --- Franja de Bloques Superiores (Alineados arriba con los logos) --- */
     .decoracion-bloque {
         position: absolute !important;
-        height: 45px !important;
+        top: 12mm !important; /* Alineados perfectamente en la zona del encabezado */
+        height: 50px !important; /* Tamaño con buena presencia técnica */
         width: auto !important;
-        opacity: 0.15 !important; /* Sutiles marcas de agua para que no compitan con el texto */
+        opacity: 0.85 !important; /* Color con pisada fuerte, ya no es clarito ni lavado */
+        z-index: 1 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
-    .b-top-izq { top: 15mm; left: 15mm; }
-    .b-top-der { top: 15mm; right: 15mm; }
-    .b-bottom-izq { bottom: 15mm; left: 15mm; }
-    .b-bottom-der { bottom: 15mm; right: 15mm; }
+    /* Distribuimos los bloques en una secuencia alta en la cabecera */
+    .b-top-izq { left: 25mm; }
+    .b-top-der { right: 25mm; }
+    /* Desplazamos los otros dos ligeramente hacia el centro para armar la guarda de fondo */
+    .b-bottom-izq { left: 75mm; top: 14mm !important; }
+    .b-bottom-der { right: 75mm; top: 10mm !important; }
 
-    /* --- Encabezado de Logos --- */
+    /* --- Encabezado de Logos (Por encima de los bloques de fondo) --- */
     .portada-header {
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
         width: 100% !important;
-        z-index: 10;
+        z-index: 10 !important;
+        position: relative !important;
     }
 
     .header-logos-izq {
@@ -1244,25 +1251,26 @@ h6 {
     }
 
     .portada-logo-jornada {
-        max-width: 160px !important; /* Cobró mayor protagonismo */
+        max-width: 160px !important;
         height: auto !important;
     }
 
     .portada-logo-lad {
-        max-width: 55px !important; /* Integrado al encabezado */
+        max-width: 55px !important;
         height: auto !important;
     }
 
     .portada-logo-unla {
-        max-width: 70px !important; /* Reducido para equilibrar las proporciones */
+        max-width: 70px !important;
         height: auto !important;
     }
 
     /* --- Bloque Central Estricto Onyx y Centrado --- */
     .portada-centro {
-        text-align: center !important; /* Asegura el centrado de todos sus hijos */
+        text-align: center !important;
         width: 100% !important;
         margin-top: -10mm !important;
+        z-index: 10 !important;
     }
 
     .portada-institucion {
@@ -1315,7 +1323,7 @@ h6 {
     /* --- Bloque Inferior --- */
     .portada-footer {
         width: 100% !important;
-        z-index: 10;
+        z-index: 10 !important;
     }
 
     .portada-modalidades {
@@ -1331,7 +1339,7 @@ h6 {
         font-size: 11px !important;
         text-transform: uppercase !important;
         letter-spacing: 1px !important;
-        background-color: rgba(13, 92, 97, 0.08) !important; /* Toque sutil verdoso */
+        background-color: rgba(13, 92, 97, 0.08) !important; /* Tono de fondo suave */
         color: #353839 !important;
         padding: 5px 12px !important;
         border: 1px solid rgba(53, 56, 57, 0.15) !important;
@@ -1355,3 +1363,4 @@ h6 {
         line-height: 1.4 !important;
     }
 }
+
