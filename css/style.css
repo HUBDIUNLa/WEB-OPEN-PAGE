@@ -892,7 +892,7 @@ h6 {
 }
 
 .legal0-divider {
-  border-top: 4px solid var(--hub-alabaster-gray, #BFC4C6);
+  border-top: 4px solid var(--hub-dark-teal, #0E7469);
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -930,5 +930,5 @@ h6 {
 }
 
 .legal0-link:hover {
-  color: var(--hub-alabaster-gray, #BFC4C6);
+  color: var(--hub-dark-teal, #0E7469);
 }
