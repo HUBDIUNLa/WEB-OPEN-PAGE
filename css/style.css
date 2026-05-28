@@ -825,3 +825,57 @@ h6 {
 .legal2-link:hover {
   color: var(--hub-cyan-bright, #00a896);
 }
+
+.legal3-section {
+  padding: 4rem 0;
+}
+
+.legal3-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--hub-dark-gray, #564154);
+  color: var(--hub-white);
+  padding: 3rem;
+}
+
+.legal3-divider {
+  border-top: 4px solid var(--tomato-clear, #00a896);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.legal3-date {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.legal3-title h3{
+  color: var(--hub-white);
+  margin-bottom: 2rem;
+}
+
+.legal3-content {
+  max-width: 850px;
+  line-height: 1.7;
+}
+
+.legal3-content p + p {
+  margin-top: 1rem;
+}
+
+.legal3-content h6 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--hub-white);
+  font-size: 0.875rem;
+}
+
+.legal3-link {
+  color: var(--hub-white);
+  text-decoration: underline;
+}
+
+.legal3-link:hover {
+  color: var(--tomato-clear, #00a896);
+}
