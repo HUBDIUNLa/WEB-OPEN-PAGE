@@ -1403,7 +1403,7 @@ h6 {
     .impacto-logo-blanco {
         max-width: 240px !important;
         height: auto !important;
-        filter: brightness(0) invert(1) !important; /* Fuerza a que si el logo tiene rasgos negros pase a blanco puro */
+       
     }
 
     /* La imagen del bloque láser */
