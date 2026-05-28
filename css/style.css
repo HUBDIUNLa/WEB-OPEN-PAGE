@@ -1123,7 +1123,7 @@ h6 {
     .caratula-print {
         display: block !important;
         width: 100% !important;
-        background-color: #b4b9b9 !important; /* Tono más oscuro y verdoso para contraste del logo */
+        background-color: #1a8c92 !important; /* Tono más oscuro y verdoso para contraste del logo */
         padding: 40px 30px !important;       
         margin-bottom: 40px !important;
         box-sizing: border-box !important;
