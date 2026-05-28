@@ -1439,13 +1439,12 @@ h6 {
         display: block !important;
         position: relative !important;
         
-        /* Dimensiones físicas estrictas A4 */
         width: 210mm !important;
         height: 297mm !important;
         height: 100vh !important;
         
         background-color: #000000 !important; /* Negro Pleno */
-        padding: 0 !important; /* Full-bleed total: elimina los bordes blancos */
+        padding: 0 !important;
         margin: 0 !important;
         box-sizing: border-box !important;
         
@@ -1460,57 +1459,59 @@ h6 {
         position: relative !important;
         width: 100% !important;
         height: 100% !important;
+        overflow: hidden !important; /* Evita cualquier desborde por el gran tamaño de los bloques */
     }
 
-    /* Estilo común para los 4 bloques morfológicos individuales */
+    /* Bloques Morfológicos un 200% más grandes y con posicionamiento dinámico */
     .bloque-morfologico {
         position: absolute !important;
         width: auto !important;
-        max-width: 150px !important; /* Tamaño grande y nítido para cada uno */
+        max-width: 300px !important; /* Escalado masivo a 200% para gran impacto visual */
         height: auto !important;
         object-fit: contain !important;
+        z-index: 1 !important;
     }
 
-    /* UBICACIÓN DE LAS 4 ESQUINAS (Margen de seguridad de 20mm desde el borde negro real) */
-    .b-esquina-top-izq {
-        top: 25mm !important;
-        left: 25mm !important;
+    /* POSICIONAMIENTO DE IRRADIACIÓN (Puntos de anclaje expandidos desde el centro) */
+    .b-irradia-top-izq {
+        top: 12% !important;
+        left: 8% !important;
     }
 
-    .b-esquina-bottom-izq {
-        bottom: 25mm !important;
-        left: 25mm !important;
+    .b-irradia-bottom-izq {
+        bottom: 12% !important;
+        left: 8% !important;
     }
 
-    /* Esquinas derechas con rotación horizontal simétrica (Espejo) */
-    .b-esquina-top-der {
-        top: 25mm !important;
-        right: 25mm !important;
+    /* Bloques derechos: Irradian hacia afuera y se invierten en espejo horizontal */
+    .b-irradia-top-der {
+        top: 12% !important;
+        right: 8% !important;
         transform: scaleX(-1) !important;
     }
 
-    .b-esquina-bottom-der {
-        bottom: 25mm !important;
-        right: 25mm !important;
+    .b-irradia-bottom-der {
+        bottom: 12% !important;
+        right: 8% !important;
         transform: scaleX(-1) !important;
     }
 
-    /* CENTRADO ABSOLUTO DEL LOGO DEL LAD (Reducido al 50%) */
+    /* NÚCLEO CENTRAL CON FUSIÓN ABSOLUTA EN NEGRO */
     .columna-centro-logo {
         position: absolute !important;
         top: 50% !important;
         left: 50% !important;
-        transform: translate(-50%, -50%) !important; /* Encastre perfecto en el centro de la hoja */
+        transform: translate(-50%, -50%) !important; /* Centro matemático absoluto de la página */
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
+        z-index: 10 !important;
     }
 
     .logo-lad-central {
-        width: 90px !important; /* Reducido a la mitad (antes medía 180px) */
+        width: 90px !important; /* Mantiene su escala sutil y elegante en el eje */
         height: auto !important;
         object-fit: contain !important;
-        filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.15)) !important;
+        filter: none !important; /* Eliminado por completo el borde tenue; fusión nativa con el fondo */
     }
 }
-
