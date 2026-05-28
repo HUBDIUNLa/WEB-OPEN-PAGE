@@ -1408,7 +1408,7 @@ h6 {
 
     /* La imagen del bloque láser */
     .impacto-imagen-central {
-        max-width: 160px !important;
+        max-width: 360px !important;
         height: auto !important;
         object-fit: contain !important;
         /* Si la imagen posee fondo negro, esto la fusiona de forma invisible sobre el fondo pleno */
