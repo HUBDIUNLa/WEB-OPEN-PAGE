@@ -1019,3 +1019,88 @@ h6 {
 .legal1-link:hover {
   color: var(--grape-soda, #88498f);
 }
+
+
+
+/* ===================================================
+   ESTILOS GENERALES DE IMPRESIÓN Y GENERACIÓN DE PDF
+   (Soporta legal0, legal1, legal2 y legal3)
+   =================================================== */
+@media print {
+    /* 1. Ocultamos navegación, pie de página, botones interactivos y contenedores web */
+    #navbar, 
+    #footer, 
+    .inline-flex, 
+    button, 
+    a[target="_blank"], 
+    .no-print {
+        display: none !important;
+    }
+
+    /* 2. Forzamos fondo blanco y texto negro absoluto en el cuerpo y secciones */
+    body, 
+    .page-main, 
+    .legal0-section, 
+    .legal1-section, 
+    .legal2-section, 
+    .ecosystem-section {
+        background: #ffffff !important;
+        color: #000000 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* 3. Limpiamos TODAS las variantes de tarjetas de sombras, fondos oscuros y bordes */
+    .legal0-card, 
+    .legal1-card, 
+    .legal2-card, 
+    .legal3-card {
+        background: #ffffff !important;
+        color: #000000 !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        position: relative !important; /* Mantiene la base para el logo en la esquina */
+    }
+
+    /* 4. LOGO DE LA ESQUINA: Forzamos que SÍ salga visible y nítido en el PDF */
+    .logo-tarjeta-esquina {
+        display: block !important;
+        position: absolute !important;
+        top: 15px !important;
+        right: 15px !important;
+        width: 60px !important; /* Tamaño ideal regulado para la hoja A4 */
+        opacity: 1 !important;  /* Sin transparencia para que salga nítido con los cartuchos */
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* 5. Aseguramos que los títulos y textos destacados pasen a negro */
+    h1, h2, h3, h4, h5, .text-white {
+        color: #000000 !important;
+    }
+
+    /* 6. Ajustamos párrafos e ítems de listas para lectura en papel */
+    p, li {
+        color: #111111 !important;
+        text-align: justify !important;
+        text-justify: inter-word !important;
+        page-break-inside: avoid; /* Evita que un párrafo se corte feo entre hojas */
+    }
+
+    /* 7. Forzamos que se impriman las líneas divisorias de todas las secciones en negro */
+    .legal0-divider,
+    .legal1-divider,
+    .legal2-divider, 
+    .legal3-divider {
+        border-bottom: 2px solid #000000 !important;
+        background-color: #000000 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+
+
