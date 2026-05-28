@@ -1187,3 +1187,153 @@ h6 {
         color: rgba(255, 255, 255, 0.4) !important;
     }
 }
+
+/* --- ESTILO WEB NORMAL (Oculto en pantalla) --- */
+.portada-a4-print {
+    display: none;
+}
+
+/* --- ESTILO DE IMPRESIÓN COMPLETO (Adentro de @media print) --- */
+@media print {
+    .portada-a4-print {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        
+        /* Forzar dimensiones exactas de hoja A4 estándar */
+        width: 210mm !important;
+        height: 297mm !important;
+        height: 100vh !important;
+        
+        background-color: #0D5C61 !important; /* Verde oscuro institucional */
+        padding: 40mm 25mm 30mm 25mm !important; /* Márgenes de imprenta generosos */
+        box-sizing: border-box !important;
+        
+        /* Salto de página obligado inmediatamente después de la carátula */
+        page-break-after: always !important;
+        break-after: page !important;
+        
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* --- Encabezado --- */
+    .portada-header {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    .portada-logo-jornada {
+        max-width: 150px !important;
+        height: auto !important;
+    }
+
+    .portada-logo-unla {
+        max-width: 90px !important;
+        height: auto !important;
+    }
+
+    /* --- Bloque Central --- */
+    .portada-centro {
+        text-align: center !important;
+        margin-top: -20mm !important; /* Centrado óptico ajustado */
+    }
+
+    .portada-institucion {
+        font-size: 16px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+        margin: 0 0 15px 0 !important;
+    }
+
+    .portada-linea-decorativa {
+        width: 60px !important;
+        height: 3px !important;
+        background-color: #ffffff !important;
+        margin: 0 auto 25px auto !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .portada-centro h1 {
+        font-size: 34px !important;
+        font-weight: 800 !important;
+        line-height: 1.2 !important;
+        color: #ffffff !important;
+        text-transform: uppercase !important;
+        margin: 0 0 15px 0 !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    .portada-centro h2 {
+        font-size: 20px !important;
+        font-weight: 400 !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        margin: 0 0 35px 0 !important;
+    }
+
+    .portada-version {
+        font-size: 13px !important;
+        font-family: 'Roboto Mono', monospace !important;
+        color: rgba(255, 255, 255, 0.6) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+    }
+
+    /* --- Bloque Inferior --- */
+    .portada-footer {
+        width: 100% !important;
+    }
+
+    /* Fila de Tags con las modalidades */
+    .portada-modalidades {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 12px !important;
+        flex-wrap: wrap !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+        padding-bottom: 25px !important;
+        margin-bottom: 25px !important;
+    }
+
+    .tag-modalidad {
+        font-size: 11px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #ffffff !important;
+        padding: 6px 14px !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* Grilla técnica de metadatos */
+    .portada-meta-grid {
+        display: flex !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+    }
+
+    .meta-item-izq, .meta-item-der {
+        width: 48% !important;
+    }
+
+    .meta-item-izq {
+        text-align: left !important;
+    }
+
+    .meta-item-der {
+        text-align: right !important;
+    }
+
+    .portada-meta-grid p {
+        font-size: 12px !important;
+        color: rgba(255, 255, 255, 0.85) !important;
+        margin: 0 0 4px 0 !important;
+        line-height: 1.4 !important;
+    }
+}
