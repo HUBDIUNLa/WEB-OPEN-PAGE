@@ -789,7 +789,7 @@ h6 {
 }
 
 .legal2-divider {
-  border-top: 4px solid var(--hub-cyan-bright, #00a896);
+  border-top: 4px solid var(--hub-celeste, #1C92A8);
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -961,4 +961,61 @@ h6 {
         width: 35px;
         opacity: 0.5;
     }
+}
+
+
+.legal1-section {
+  padding: 4rem 0;
+}
+
+.legal1-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--hub-dark-gray, #564154);
+  color: var(--hub-white);
+  padding: 3rem;
+  position: relative;
+    overflow: hidden;
+}
+
+.legal1-divider {
+  border-top: 4px solid var(--grape-soda, #88498f);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.legal1-date {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.legal1-title h3{
+  color: var(--hub-white);
+  margin-bottom: 2rem;
+}
+
+.legal1-content {
+  max-width: 850px;
+  line-height: 1.7;
+}
+
+.legal1-content p + p {
+  margin-top: 1rem;
+}
+
+.legal1-content h6 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--hub-white);
+  font-size: 0.875rem;
+}
+
+.legal1-link {
+  color: var(--hub-white);
+  text-decoration: underline;
+}
+
+.legal1-link:hover {
+  color: var(--grape-soda, #88498f);
 }
