@@ -1193,20 +1193,19 @@ h6 {
     display: none;
 }
 
-/* --- ESTILO DE IMPRESIÓN RECALIBRADO (Adentro de @media print) --- */
+/* --- ESTILO DE IMPRESIÓN INTEGRADO (Adentro de @media print) --- */
 @media print {
     .portada-a4-print {
         display: flex !important;
         flex-direction: column !important;
         justify-content: space-between !important;
-        position: relative !important; 
         
         width: 210mm !important;
         height: 297mm !important;
         height: 100vh !important;
         
-        background-color: #f8f9fa !important; /* Fondo neutro limpio, nada de celeste lavado general */
-        padding: 40mm 25mm 25mm 25mm !important;
+        background-color: #f7f5f2 !important; /* Fondo arena/grisáceo suave y sofisticado */
+        padding: 30mm 25mm 25mm 25mm !important;
         box-sizing: border-box !important;
         
         page-break-after: always !important;
@@ -1216,114 +1215,104 @@ h6 {
         print-color-adjust: exact !important;
     }
 
-    /* --- Franja de Bloques Superiores (Alineados arriba con los logos) --- */
-    .decoracion-bloque {
-        position: absolute !important;
-        top: 12mm !important; /* Alineados perfectamente en la zona del encabezado */
-        height: 50px !important; /* Tamaño con buena presencia técnica */
-        width: auto !important;
-        opacity: 0.85 !important; /* Color con pisada fuerte, ya no es clarito ni lavado */
-        z-index: 1 !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-    }
-    /* Distribuimos los bloques en una secuencia alta en la cabecera */
-    .b-top-izq { left: 25mm; }
-    .b-top-der { right: 25mm; }
-    /* Desplazamos los otros dos ligeramente hacia el centro para armar la guarda de fondo */
-    .b-bottom-izq { left: 75mm; top: 14mm !important; }
-    .b-bottom-der { right: 75mm; top: 10mm !important; }
-
-    /* --- Encabezado de Logos (Por encima de los bloques de fondo) --- */
-    .portada-header {
+    /* --- GUARDA DE BLOQUES Y LOGOS EN UNA SOLA FILA --- */
+    .portada-guarda-bloques {
         display: flex !important;
-        justify-content: space-between !important;
+        justify-content: center !important;
         align-items: center !important;
+        gap: 15px !important; /* Espaciado constante estilo grilla modular */
         width: 100% !important;
-        z-index: 10 !important;
-        position: relative !important;
     }
 
-    .header-logos-izq {
+    /* Forzamos a que los bloques y los contenedores institucionales midan lo mismo de alto */
+    .bloque-cabecera {
+        height: 45px !important;
+        width: auto !important;
+        object-fit: contain !important;
+        opacity: 0.9 !important; /* Presencia de color bien nítida */
+    }
+
+    .contenedor-logo-institucional {
+        height: 45px !important;
         display: flex !important;
         align-items: center !important;
-        gap: 20px !important;
+        justify-content: center !important;
     }
 
-    .portada-logo-jornada {
-        max-width: 160px !important;
-        height: auto !important;
+    /* Control riguroso del tamaño de los logos secundarios */
+    .logo-inst-cabecera {
+        height: 100% !important; /* Se adaptan estrictamente a los 45px de los bloques */
+        width: auto !important;
+        object-fit: contain !important;
     }
 
-    .portada-logo-lad {
-        max-width: 55px !important;
-        height: auto !important;
-    }
-
-    .portada-logo-unla {
-        max-width: 70px !important;
-        height: auto !important;
-    }
-
-    /* --- Bloque Central Estricto Onyx y Centrado --- */
+    /* --- BLOQUE CENTRAL COMPLETAMENTE CENTRADO --- */
     .portada-centro {
         text-align: center !important;
         width: 100% !important;
-        margin-top: -10mm !important;
-        z-index: 10 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-top: -15mm !important;
+    }
+
+    .contenedor-logo-principal {
+        margin-bottom: 25px !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    /* El logo de la jornada toma el control absoluto del protagonismo visual */
+    .logo-jornada-principal {
+        max-width: 210px !important; 
+        height: auto !important;
     }
 
     .portada-institucion {
-        font-size: 16px !important;
+        font-size: 15px !important;
         text-transform: uppercase !important;
         letter-spacing: 2px !important;
         color: #353839 !important; /* Onyx */
         margin: 0 auto 12px auto !important;
-        text-align: center !important;
     }
 
     .portada-linea-decorativa {
-        width: 80px !important;
+        width: 60px !important;
         height: 2px !important;
         background-color: #353839 !important; /* Onyx */
         margin: 0 auto 25px auto !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
     }
 
     .portada-centro h1 {
-        font-size: 32px !important;
+        font-size: 30px !important;
         font-weight: 800 !important;
         line-height: 1.2 !important;
         color: #353839 !important; /* Onyx */
         text-transform: uppercase !important;
-        margin: 0 auto 15px auto !important;
+        margin: 0 auto 12px auto !important;
         letter-spacing: 0.5px !important;
-        text-align: center !important;
     }
 
     .portada-centro h2 {
-        font-size: 19px !important;
+        font-size: 18px !important;
         font-weight: 500 !important;
         color: #4a4e50 !important;
         margin: 0 auto 30px auto !important;
-        text-align: center !important;
     }
 
     .portada-version {
-        font-size: 13px !important;
+        font-size: 12px !important;
         font-family: 'Roboto Mono', monospace !important;
         color: #555859 !important;
         text-transform: uppercase !important;
         letter-spacing: 1px !important;
-        text-align: center !important;
-        margin: 0 auto !important;
     }
 
-    /* --- Bloque Inferior --- */
+    /* --- AREA DEL FOOTER --- */
     .portada-footer {
         width: 100% !important;
-        z-index: 10 !important;
     }
 
     .portada-modalidades {
@@ -1339,12 +1328,10 @@ h6 {
         font-size: 11px !important;
         text-transform: uppercase !important;
         letter-spacing: 1px !important;
-        background-color: rgba(13, 92, 97, 0.08) !important; /* Tono de fondo suave */
+        background-color: rgba(13, 92, 97, 0.06) !important;
         color: #353839 !important;
         padding: 5px 12px !important;
         border: 1px solid rgba(53, 56, 57, 0.15) !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
     }
 
     .portada-meta-grid {
