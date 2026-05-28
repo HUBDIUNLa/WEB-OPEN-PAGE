@@ -946,7 +946,7 @@ h6 {
     position: absolute;
     top: 25px;       /* Distancia desde el borde superior de la tarjeta */
     right: 30px;     /* Distancia desde el borde derecho de la tarjeta */
-    width: 50px;     /* Tamaño controlado para que sea un detalle elegante */
+    width: 120px;     /* Tamaño controlado para que sea un detalle elegante */
     height: auto;
     object-fit: contain;
     opacity: 0.85;    /* Sutil transparencia para integrarlo al diseño */
