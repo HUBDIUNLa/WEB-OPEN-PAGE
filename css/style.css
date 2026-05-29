@@ -1561,34 +1561,36 @@ h6 {
 }
 
 .btn-ingresar-jornada {
-    position: absolute; /* Cambiado de relative a absolute */
-    bottom: 40px;       /* Distancia desde el borde inferior */
-    right: 40px;        /* Distancia desde el borde derecho */
-    z-index: 3;
-    background-color: #0D5C61; /* Tu verde institucional */
-    color: #ffffff;
-    font-family: 'Karla', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    padding: 16px 35px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    position: absolute !important; /* Asegura la posición absoluta */
+    bottom: 40px !important;       /* Distancia desde el borde inferior */
+    right: 40px !important;        /* Distancia desde el borde derecho */
+    z-index: 999999 !important;    /* LEVANTA EL BOTÓN por encima de cualquier capa o filtro invisible */
+    pointer-events: auto !important; /* FUERZA al navegador a habilitar e interceptar los clics */
+    
+    background-color: #0D5C61 !important; /* Tu verde institucional */
+    color: #ffffff !important;
+    font-family: 'Karla', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    padding: 16px 35px !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
 }
 
-/* Ajuste sutil para celulares (para que no quede muy pegado o gigante abajo) */
+/* Ajuste sutil para celulares */
 @media (max-width: 767px) {
     .btn-ingresar-jornada {
-        bottom: 25px;
-        right: 25px;
-        padding: 12px 25px;
-        font-size: 13px;
+        bottom: 25px !important;
+        right: 25px !important;
+        padding: 12px 25px !important;
+        font-size: 13px !important;
     }
 }
-}
+
 
 .btn-ingresar-jornada:hover {
     background-color: #1A8C92; /* Variante teal clara al pasar el mouse */
