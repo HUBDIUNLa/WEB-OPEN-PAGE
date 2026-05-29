@@ -34,6 +34,30 @@
 </head>
 
 <body>
+
+<!-- PANTALLA DE INTRO CON VIDEO CONFIGURADO PARA PC Y MOBILE -->
+<div id="video-intro-overlay" class="no-print">
+  <div class="video-intro-container">
+    
+    <video autoplay muted loop playsinline id="intro-video">
+      <!-- Video para Celulares (Se activa en pantallas menores a 768px de ancho) -->
+      <source src="assets/images/JDFDmobile.mp4" type="video/mp4" media="(max-width: 767px)">
+      
+      <!-- Video para Computadoras / Escritorio (Se activa de 768px en adelante) -->
+      <source src="assets/images/JDFD.mp4" type="video/mp4" media="(min-width: 768px)">
+      
+      Tu navegador no soporta la reproducción de video.
+    </video>
+    
+    <div class="video-overlay-filtro"></div>
+    
+    <button onclick="ingresarAWeb()" class="btn-ingresar-jornada">
+      <span>Ingresar a la Circular</span>
+      <i class="fa-solid fa-arrow-right ml-2"></i>
+    </button>
+  </div>
+</div>
+
   <!-- PANTALLA DE INTRO CON VIDEO (Oculta automáticamente al imprimir) -->
 <div id="video-intro-overlay" class="no-print">
   <div class="video-intro-container">
