@@ -1599,6 +1599,8 @@ h6 {
     box-shadow: 0 15px 35px rgba(26, 140, 146, 0.4);
 }
 
+
+
 /* Si la intro está activa pero mandan a imprimir, la anulamos para que no rompa el PDF */
 @media print {
     #video-intro-overlay {
