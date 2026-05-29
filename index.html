@@ -47,6 +47,10 @@
       </video>
       
       <div class="video-overlay-filtro"></div>
+
+      <button onclick="alternarSonidoIntro()" id="btn-volumen-intro" class="btn-audio-flotante">
+      <i class="fa-solid fa-volume-xmark" id="icono-volumen"></i>
+    </button>
       
       <button onclick="ingresarAWeb()" class="btn-ingresar-jornada">
         <span>Ingresar</span>
@@ -737,6 +741,45 @@ Línea Roca – Estación Lanús.
         }
         
         // Una vez terminada la animación (800ms), removemos el contenedor del flujo
+        setTimeout(() => {
+          introScreen.style.display = 'none';
+        }, 800);
+      }
+    }
+</script>
+
+<script>
+    function alternarSonidoIntro() {
+      const videoElement = document.getElementById('intro-video');
+      const icono = document.getElementById('icono-volumen');
+      
+      if (videoElement && icono) {
+        if (videoElement.muted) {
+          // Si está mudo, le activamos el sonido
+          videoElement.muted = false;
+          videoElement.volume = 1.0;
+          icono.className = "fa-solid fa-volume-high"; // Cambia el icono a parlante sonando
+        } else {
+          // Si ya tenía sonido, lo volvemos a mutear
+          videoElement.muted = true;
+          icono.className = "fa-solid fa-volume-xmark"; // Cambia el icono a parlante tachado
+        }
+      }
+    }
+
+    // Tu función ingresar original se mantiene igual pausando el video al salir
+    function ingresarAWeb() {
+      const introScreen = document.getElementById('video-intro-overlay');
+      const videoElement = document.getElementById('intro-video');
+      
+      if (introScreen) {
+        introScreen.style.opacity = '0';
+        introScreen.style.transform = 'translateY(-100vh)'; 
+        
+        if (videoElement) {
+            videoElement.pause();
+        }
+        
         setTimeout(() => {
           introScreen.style.display = 'none';
         }, 800);

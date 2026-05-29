@@ -1615,3 +1615,38 @@ h6 {
         display: none !important;
     }
 }
+
+.btn-audio-flotante {
+    position: absolute !important;
+    top: 40px !important;
+    right: 40px !important;
+    z-index: 999999 !important;
+    pointer-events: auto !important;
+    background: rgba(13, 92, 97, 0.6) !important; /* Verde traslúcido */
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important; /* Redondo */
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 18px !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-audio-flotante:hover {
+    background: #0D5C61 !important;
+    transform: scale(1.1) !important;
+}
+
+@media (max-width: 767px) {
+    .btn-audio-flotante {
+        top: 25px !important;
+        right: 25px !important;
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 14px !important;
+    }
+}
