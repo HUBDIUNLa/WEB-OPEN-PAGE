@@ -35,50 +35,28 @@
 
 <body>
 
-<!-- PANTALLA DE INTRO CON VIDEO CONFIGURADO PARA PC Y MOBILE -->
-<div id="video-intro-overlay" class="no-print">
-  <div class="video-intro-container">
-    
-    <video autoplay muted loop playsinline id="intro-video">
-      <!-- Video para Celulares (Se activa en pantallas menores a 768px de ancho) -->
-      <source src="assets/images/JDFDmobile.mp4" type="video/mp4" media="(max-width: 767px)">
+  <div id="video-intro-overlay" class="no-print">
+    <div class="video-intro-container">
       
-      <!-- Video para Computadoras / Escritorio (Se activa de 768px en adelante) -->
-      <source src="assets/images/JDFD.mp4" type="video/mp4" media="(min-width: 768px)">
+      <video autoplay muted loop playsinline id="intro-video">
+        <source src="assets/videos/JDFDmobile.mp4" type="video/mp4" media="(max-width: 767px)">
+        
+        <source src="assets/videos/JDFD.mp4" type="video/mp4" media="(min-width: 768px)">
+        
+        Tu navegador no soporta la reproducción de video.
+      </video>
       
-      Tu navegador no soporta la reproducción de video.
-    </video>
-    
-    <div class="video-overlay-filtro"></div>
-    
-    <button onclick="ingresarAWeb()" class="btn-ingresar-jornada">
-      <span>Ingresar a la Circular</span>
-      <i class="fa-solid fa-arrow-right ml-2"></i>
-    </button>
+      <div class="video-overlay-filtro"></div>
+      
+      <button onclick="ingresarAWeb()" class="btn-ingresar-jornada">
+        <span>Ingresar a la Circular</span>
+        <i class="fa-solid fa-arrow-right ml-2"></i>
+      </button>
+    </div>
   </div>
-</div>
-
-  <!-- PANTALLA DE INTRO CON VIDEO (Oculta automáticamente al imprimir) -->
-<div id="video-intro-overlay" class="no-print">
-  <div class="video-intro-container">
-    <!-- El video en loop, mudo por defecto para que el navegador permita el autoplay -->
-    <video autoplay muted loop playsinline id="intro-video">
-      <source src="assets/images/JDFD.mp4" type="video/mp4">
-      Tu navegador no soporta la reproducción de video.
-    </video>
-    
-    <!-- Capa oscura intermedia para que el botón tenga excelente contraste -->
-    <div class="video-overlay-filtro"></div>
-    
-    <!-- Botón de entrada -->
-    <button onclick="ingresarAWeb()" class="btn-ingresar-jornada">
-      <span>Ingresar</span>
-      <i class="fa-solid fa-arrow-right ml-2"></i>
-    </button>
-  </div>
-</div>
 
   <div id="navbar"></div>
+
 
   <main id="JDFD" class="page-main">
     <section id="inicio" class="hero-section flex items-start justify-center px-6">
@@ -746,17 +724,26 @@ Línea Roca – Estación Lanús.
 <script>
     function ingresarAWeb() {
       const introScreen = document.getElementById('video-intro-overlay');
+      const videoElement = document.getElementById('intro-video');
+      
       if (introScreen) {
-        // Genera el efecto de desvanecimiento suave
+        // Forzamos la transición fluida de CSS hacia arriba de forma válida
         introScreen.style.opacity = '0';
-        introScreen.style.transform = 'top';
+        introScreen.style.transform = 'translateY(-100vh)'; 
         
-        // Al terminar la transición de CSS (800ms), removemos el nodo para liberar memoria
+        // Pausamos el video de fondo en paralelo para liberar memoria del dispositivo
+        if (videoElement) {
+            videoElement.pause();
+        }
+        
+        // Una vez terminada la animación (800ms), removemos el contenedor del flujo
         setTimeout(() => {
           introScreen.style.display = 'none';
         }, 800);
       }
     }
-  </script>
+</script>
+
+
 </body>
 </html>
